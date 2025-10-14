@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Monthly Flight Delays vs Rainfall — Melbourne vs Sydney",
   "data": {
-    "url": "https://divyanshsharma12.github.io/FIT3179-FlightDelaysA2/mel_syd_monthly_reduced.csv",
+    "url": "https://divyanshsharma12.github.io/FIT3179-FlightDelaysA2/mel_syd_monthly.csv",
     "format": { "type": "csv", "parse": { "month": "date:%Y-%m" } }
   },
 
