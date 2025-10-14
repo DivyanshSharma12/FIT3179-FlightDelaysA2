@@ -4,10 +4,10 @@
 "data": { "url": "../mel_syd_monthly_reduced.csv" },
 
 "transform": [
-    { "filter": "CitySelect == null || datum.city == CitySelect" },
-    { "calculate": "datum.delay_rate * 100", "as": "DelayPct" }
-  ],
-
+  { "filter": "CitySelect == null || datum.city == CitySelect" },
+  { "calculate": "toDate(datum.month + '-01')", "as": "Month" },
+  { "calculate": "datum.delay_rate * 100", "as": "DelayPct" }
+]
 "params": [
     {
       "name": "CitySelect",
@@ -42,7 +42,7 @@
     {
         "mark": { "type": "area", "opacity": 0.25 },
         "encoding": {
-          "x": { "field": "month", "type": "temporal" },
+          "x": { "field": "Month", "type": "temporal", "title": "Month" }
           "y": { "field": "rain_mm", "type": "quantitative", "title": "Rainfall (mm)" },
           "color": { "field": "city", "type": "nominal", "legend": null }
         }
