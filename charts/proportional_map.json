@@ -28,13 +28,13 @@
       ], 
 
        "mark": { "type": "circle", "opacity": 0.9 },
-        "longitude": { "field": "lon" },
-        "latitude":  { "field": "lat" },
-        "size":      { "field": "DelayPct", "type": "quantitative", "title": "Median Delay (%)" },
-        "color":     { "field": "city", "type": "nominal", "title": "City" },
-        "tooltip": [
-          { "field": "city" },
-          { "field": "DelayPct", "type": "quantitative", "format": ".1f", "title": "Median Delay (%)" }
+          "longitude": { "field": "lon" },
+          "latitude":  { "field": "lat" },
+          "size":      { "field": "DelayPct", "type": "quantitative", "title": "Median Delay (%)" },
+          "color":     { "field": "city", "type": "nominal", "title": "City" },
+          "tooltip": [
+            { "field": "city" },
+            { "field": "DelayPct", "type": "quantitative", "format": ".1f", "title": "Median Delay (%)" }
         ]
       }
     }
