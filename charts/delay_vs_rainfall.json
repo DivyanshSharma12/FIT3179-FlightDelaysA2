@@ -21,12 +21,16 @@
 
   "resolve": { "scale": { "y": "independent" } },
 
+  
   "layer": [
     {
       "mark": { "type": "line", "point": true },
       "encoding": {
         "x": { "field": "month", "type": "temporal", "title": "Month" },
-        "y": { "field": "DelayPct", "type": "quantitative", "title": "Delay (%)" },
+        "y": {
+          "field": "DelayPct", "type": "quantitative",
+          "title": "Delay (%)", "scale": { "domain": [0, 60] }, "axis": { "format": ".1f", "orient": "left" }
+        },
         "color": { "field": "city", "type": "nominal", "title": "City" },
         "tooltip": [
           { "field": "city", "type": "nominal" },
@@ -37,15 +41,19 @@
       }
     },
     {
-      "mark": { "type": "area", "opacity": 0.25 },
+      "mark": { "type": "area", "opacity": 0.2 },
       "encoding": {
         "x": { "field": "month", "type": "temporal", "title": "Month" },
-        "y": { "field": "rain_mm", "type": "quantitative", "title": "Rainfall (mm)" },
+        "y": {
+          "field": "rain_mm", "type": "quantitative",
+          "title": "Rainfall (mm)", "axis": { "orient": "right" }
+        },
         "color": { "field": "city", "type": "nominal", "legend": null }
       }
     }
   ],
 
+  
   "width": 900,
   "height": 360,
   "config": { "axis": { "grid": true } }
