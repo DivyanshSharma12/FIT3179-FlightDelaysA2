@@ -2,26 +2,20 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Monthly Flight Delays vs Rainfall — Melbourne vs Sydney",
   "data": {
-    "url": "https://divyanshsharma12.github.io/FIT3179-FlightDelaysA2/mel_syd_monthly_reduced.csv"
+    "url": "https://divyanshsharma12.github.io/FIT3179-FlightDelaysA2/mel_syd_monthly_reduced.csv",
+    "format": { "type": "csv", "parse": { "month": "date:%Y-%m" } }
   },
 
-  
   "params": [
     {
       "name": "CitySelect",
-      "bind": {
-        "input": "select",
-        "options": [null, "Melbourne", "Sydney"],
-        "labels": ["Both", "Melbourne", "Sydney"],
-        "name": "City: "
-      },
+      "bind": { "input": "select", "options": [null, "Melbourne", "Sydney"], "labels": ["Both", "Melbourne", "Sydney"], "name": "City: " },
       "value": null
     }
   ],
 
   "transform": [
     { "filter": "CitySelect == null || datum.city == CitySelect" },
-    { "calculate": "toDate(datum.month + '-01')", "as": "Month" },
     { "calculate": "datum.delay_rate * 100", "as": "DelayPct" }
   ],
 
@@ -31,12 +25,12 @@
     {
       "mark": { "type": "line", "point": true },
       "encoding": {
-        "x": { "field": "Month", "type": "temporal", "title": "Month" },
+        "x": { "field": "month", "type": "temporal", "title": "Month" },
         "y": { "field": "DelayPct", "type": "quantitative", "title": "Delay (%)" },
         "color": { "field": "city", "type": "nominal", "title": "City" },
         "tooltip": [
           { "field": "city", "type": "nominal" },
-          { "field": "Month", "type": "temporal", "timeUnit": "yearmonth", "title": "Month" },
+          { "field": "month", "type": "temporal", "timeUnit": "yearmonth", "title": "Month" },
           { "field": "DelayPct", "type": "quantitative", "format": ".1f", "title": "Delay (%)" },
           { "field": "rain_mm", "type": "quantitative", "title": "Rainfall (mm)" }
         ]
@@ -45,7 +39,7 @@
     {
       "mark": { "type": "area", "opacity": 0.25 },
       "encoding": {
-        "x": { "field": "Month", "type": "temporal", "title": "Month" },
+        "x": { "field": "month", "type": "temporal", "title": "Month" },
         "y": { "field": "rain_mm", "type": "quantitative", "title": "Rainfall (mm)" },
         "color": { "field": "city", "type": "nominal", "legend": null }
       }
