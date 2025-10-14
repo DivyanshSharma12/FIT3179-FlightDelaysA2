@@ -52,7 +52,7 @@
     }
   ],
 
-  "width": "container",
-  "height": 400,
+  "width": 900,
+  "height": 360,
   "config": { "axis": { "grid": true } }
 }
