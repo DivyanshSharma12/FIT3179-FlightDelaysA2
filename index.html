@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flight Delays vs Rainfall</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <h1>Flight Punctuality: Melbourne vs Sydney</h1>
+  <div id="chart1"></div>
+  <script>
+    vegaEmbed('#chart1', 'charts/delay_vs_rainfall.json');
+  </script>
+</body>
+</html>
