@@ -16,7 +16,7 @@
 
   "transform": [
     { "filter": "CitySelect == null || datum.city == CitySelect" },
-    { "calculate": "datum.delay_rate * 100", "as": "DelayPct" }
+    { "calculate": "datum.delay_rate", "as": "DelayPct" }
   ],
 
   "resolve": { "scale": { "y": "independent" } },
