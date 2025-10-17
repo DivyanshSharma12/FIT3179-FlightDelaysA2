@@ -14,7 +14,7 @@
       "mark": {"type": "geoshape", "fill": "#eee", "stroke": "white"}
     },
     {
-      "data": {"url": "data/cities_7.csv"},
+      "data": {"url": "cities_7.csv"}
       "mark": {"type": "circle", "opacity": 0.95},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
@@ -29,7 +29,7 @@
       }
     },
     {
-      "data": {"url": "data/cities_7.csv"},
+      "data": {"url": "cities_7.csv"}
       "mark": {"type": "text", "dy": -10},
       "encoding": {
         "longitude": {"field": "lon", "type": "quantitative"},
