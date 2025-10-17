@@ -1,1 +1,42 @@
-
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 900,
+  "height": 520,
+  "title": "Major Australian Cities (primary airports)",
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+      "transform": [{"filter": "datum.properties.name == 'Australia'"}],
+      "mark": {"type": "geoshape", "fill": "#eee", "stroke": "white"}
+    },
+    {
+      "data": {"url": "data/cities_7.csv"},
+      "mark": {"type": "circle", "opacity": 0.95},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "size": {"value": 140},
+        "tooltip": [
+          {"field": "city"},
+          {"field": "airport_name", "title": "Airport"},
+          {"field": "iata", "title": "IATA"},
+          {"field": "state"}
+        ]
+      }
+    },
+    {
+      "data": {"url": "data/cities_7.csv"},
+      "mark": {"type": "text", "dy": -10},
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "city", "type": "nominal"}
+      }
+    }
+  ]
+}
+c
