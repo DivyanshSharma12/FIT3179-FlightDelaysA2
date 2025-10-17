@@ -2,18 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Australian Flight Network</title>
+  <title>Australia’s Flight Network — Major Cities</title>
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+    h1 { margin: 0 0 12px; }
+    #citiesMap { border: 1px solid #eee; border-radius: 10px; padding: 10px; }
+  </style>
 </head>
 <body>
-  <h1>Australian Flight Network</h1>
-  <div id="chart1"></div>
-  <div id="map1"></div>
+  <h1>Australia’s Flight Network — Major Cities</h1>
+  <div id="citiesMap"></div>
+
   <script>
-    vegaEmbed('#chart1', 'charts/delay_vs_rainfall.json');
-    vegaEmbed('#map1',  'charts/proportional_map.json');
+    // First chart only (cities map). We'll add routes later.
+    vegaEmbed('#citiesMap', 'charts/cities_map.json', { actions: false }).catch(console.error);
   </script>
 </body>
 </html>
