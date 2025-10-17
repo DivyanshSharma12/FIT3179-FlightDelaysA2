@@ -1,0 +1,8 @@
+iata,city,state,lat,lon,airport_name
+SYD,Sydney,NSW,-33.9399,151.1753,Sydney Kingsford Smith Airport
+MEL,Melbourne,VIC,-37.6733,144.843,Melbourne Tullamarine Airport
+BNE,Brisbane,QLD,-27.3842,153.1175,Brisbane Airport
+PER,Perth,WA,-31.9403,115.9672,Perth Airport
+ADL,Adelaide,SA,-34.945,138.5306,Adelaide Airport
+HBA,Hobart,TAS,-42.8361,147.51,Hobart Airport
+DRW,Darwin,NT,-12.4147,130.8767,Darwin International Airport
